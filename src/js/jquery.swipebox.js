@@ -14,8 +14,6 @@
                 useSVG: true,
                 initialIndexOnArray: 0,
                 closeBySwipe: true,
-                hideBarsOnMobile: false,
-                hideBarsDelay: 3000,
                 videoMaxWidth: 1140,
                 vimeoColor: 'CCCCCC',
                 beforeOpen: null,
@@ -188,9 +186,7 @@
                     });
                 }
 
-                if (isMobile && plugin.settings.hideBarsOnMobile === true) {
-                    //$( '#swipebox-action, #swipebox-caption' ).hide();
-                }
+
 
                 $.each(elements, function () {
                     $('#swipebox-slider').append('<div class="slide"></div>');
@@ -445,18 +441,7 @@
             /**
              * Set timer to hide the action bars
              */
-            setTimeout: function () {
-                if (plugin.settings.hideBarsDelay > 0) {
-                    var $this = this;
-                    $this.clearTimeout();
-                    $this.timeout = window.setTimeout(function () {
-                            $this.hideBars();
-                        },
 
-                        plugin.settings.hideBarsDelay
-                    );
-                }
-            },
 
             /**
              * Clear timer
